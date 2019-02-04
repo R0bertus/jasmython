@@ -1,7 +1,12 @@
 from browser import window
 describe = window.describe
+expect = window.expect
 test = window.jasmine.getEnv().it
 before_each = window.jasmine.getEnv().beforeEach
+
+
+def setup(objects):
+    [o.group(o.suites[i]) for i, o in enumerate(objects)]
 
 
 class Suite(object):
